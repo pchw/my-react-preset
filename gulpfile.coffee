@@ -75,11 +75,12 @@ gulp.task 'images', ->
   .pipe $.size()
 
 # Clean
-gulp.task 'clean', (cb) ->
-  cb del.sync([
+gulp.task 'clean', (callback)->
+  del.sync([
     'app/public'
     'client/scripts/template/**/*.js'
   ])
+  do callback
 
 # Bower helper
 gulp.task 'bower', ->
