@@ -20,8 +20,8 @@ bundle = ->
   .on('error', $.util.log.bind($.util, 'error'))
   .pipe(source('bundle.js'))
   .pipe(buffer())
-  .pipe(sourcemaps.init(loadMaps: true))
-  .pipe(sourcemaps.write('app/public/scripts/'))
+  .pipe($.sourcemaps.init(loadMaps: true))
+  .pipe($.sourcemaps.write('app/public/scripts/'))
   .pipe(gulp.dest('app/public/scripts/'))
 
 bundler = watchify(browserify(sourceFile, watchify.args))
